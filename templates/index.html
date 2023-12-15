@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Price Prediction</title>
+</head>
+<body>
+  <h1>Car Price Prediction</h1>
+  <form action="/predict" method="POST">
+    <label for="distance">Distance covered (km):</label>
+    <input type="number" name="distance" id="distance" required>
+    <br>
+    <label for="age">Vehicle age (years):</label>
+    <input type="number" name="age" id="age" required>
+    <br>
+    <button type="submit">Predict Price</button>
+  </form>
+  {% if predicted_price %}
+    <p>Predicted price: ${{ (predicted_price) }}</p>
+  {% endif %}
+</body>
+</html>
